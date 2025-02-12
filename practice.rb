@@ -27,3 +27,11 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+
+wallet = Hash.new(0)
+for x in blockchain
+  wallet[x["to_user"]] = x["to_user"] + x["amount"] 
+  wallet[x["from_user"]] = x["from_user"] - x["amount"]
+
+end
+puts wallet
